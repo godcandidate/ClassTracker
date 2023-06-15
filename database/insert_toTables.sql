@@ -17,14 +17,44 @@ VALUES
   (20727932, 3034992, 'Kytter', 'Sophia', 'KS', 'Sophia9', 'sophia@gmail.com', 3, 'COE'),
   (20721999, 3034922, 'Ziems', 'Evelyn', 'ZE', 'Evelyn0', 'evelyn@gmail.com', 3, 'COE')
 
---Years
 INSERT INTO program_year 
 VALUES
 	('BE2', 2, 'BE'),
 	('BE3', 3, 'BE'),
 	('COE2', 2, 'COE'),
 	('COE3', 3, 'COE')
+
+INSERT INTO course 
+VALUES
+	('COE252', 'DATA STRUCTURES AND ALOGRITHM' ),
+	('TE262','ELECTROMAGNETIC FIELDS' ),
+	('COE272', 'DIGITAL SYSTEM DESIGN I' ),
+	('BE251', 'MOLECULAR BIOLOGY' ),
+	('BE201', 'ASRTOPHYSICS' ),
+	('COE358', 'EMBEDDED SYSTEMS' ),
+	('COE354', 'OPERATING SYSTEMS'),
+	('COE368', 'DATABASE RETRIEVAL'),
+	('BE342', 'BIOCHEMISTRY' ),
+	('BE378', 'QUANTUM COMPUTING' )
 	
+INSERT INTO program_course (program_year_code, course_code) 
+VALUES 
+	('COE2', 'COE252'),
+	('COE2', 'COE272'),
+	('COE2', 'TE262'),
+	('BE2', 'BE201'),
+	('BE2', 'BE251'),
+	('BE2', 'TE262'),
+	('COE3', 'COE358'),
+	('COE3', 'COE354'),
+	('COE3', 'COE368'),
+	('BE3', 'COE358'),
+	('BE3', 'BE342'),
+	('BE3', 'BE378')
+	
+		
 SELECT * FROM programme
 SELECT * FROM student
-SELECT * FROM program_year
+SELECT * FROM program_year 
+SELECT * FROM course
+SELECT * FROM program_course WHERE program_year_code = 'COE2';
