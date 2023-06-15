@@ -17,6 +17,7 @@ VALUES
   (20727932, 3034992, 'Kytter', 'Sophia', 'KS', 'Sophia9', 'sophia@gmail.com', 3, 'COE'),
   (20721999, 3034922, 'Ziems', 'Evelyn', 'ZE', 'Evelyn0', 'evelyn@gmail.com', 3, 'COE')
 
+--Program year
 INSERT INTO program_year 
 VALUES
 	('BE2', 2, 'BE'),
@@ -24,6 +25,7 @@ VALUES
 	('COE2', 2, 'COE'),
 	('COE3', 3, 'COE')
 
+-- Courses
 INSERT INTO course 
 VALUES
 	('COE252', 'DATA STRUCTURES AND ALOGRITHM' ),
@@ -36,7 +38,8 @@ VALUES
 	('COE368', 'DATABASE RETRIEVAL'),
 	('BE342', 'BIOCHEMISTRY' ),
 	('BE378', 'QUANTUM COMPUTING' )
-	
+
+-- Program year courses
 INSERT INTO program_course (program_year_code, course_code) 
 VALUES 
 	('COE2', 'COE252'),
@@ -51,10 +54,41 @@ VALUES
 	('BE3', 'COE358'),
 	('BE3', 'BE342'),
 	('BE3', 'BE378')
-	
+
+-- Rooms
+INSERT INTO room (room_name, room_location, capacity, description)
+VALUES ('PB001', 'Petroleum Building', 'MAX 300 Students', 'Two functional TVS and a projector'),
+	('A110', 'Ceasar Building', 'MAX 200 Students', 'One projector'),
+	('VLSA', 'Levive Building', 'MAX 250 Students', 'Three functional TVS and a projector'),
+	('PB012', 'Petroleum Building', 'MAX 150 Students', 'One projector'),
+	('PB014', 'Petroleum Building', 'MAX 300 Students', 'Two functional TVS and a projector'),
+	('PB201', 'Petroleum Building', 'MAX 400 Students', 'Two functional TVS and a projector')
+
+--Timetable
+INSERT INTO timetable(program_year_code,event_day,course_code,room_name,start_time,end_time,status)
+VALUES ('COE2','Monday','COE252','PB001', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('COE2','Monday','COE272','A110', TIME '3:00:00', TIME '4:55:00', 'pending'),
+		('COE3','Monday','COE354','VLSA', TIME '1:00:00', TIME '2:55:00', 'pending'),
+		('BE3','Monday','COE354','PB001', TIME '10:30:00', TIME '12:25:00', 'pending'),
+		('BE2','Tuesday','TE262','PB014', TIME '8:00:00', TIME '8:55:00', 'pending'),
+		('BE2','Tuesday','BE251','PB012', TIME '1:00:00', TIME '2:55:00', 'pending'),
+		('BE3','Tuesday','COE358','VLSA', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('COE2','Wednesday','COE272','PB012', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('COE3','Wednesday','COE358','PB001', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('BE2','Wednesday','BE251','VLSA', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('COE3','Thursday','COE368','VLSA', TIME '1:00:00', TIME '2:55:00', 'pending'),
+		('BE3','Thursday','BE342','VLSA', TIME '10:30:00', TIME '12:25:00', 'pending'),
+		('COE3','Thursday','COE354','A110', TIME '8:00:00', TIME '9:55:00', 'pending'),
+		('BE2','Friday','BE251','A110', TIME '1:00:00', TIME '2:55:00', 'pending'),
+		('BE3','Friday','TE262','PB201', TIME '1:00:00', TIME '2:55:00', 'pending'),
+		('COE2','Friday','COE272','PB201', TIME '3:00:00', TIME '4:55:00', 'pending')	
 		
 SELECT * FROM programme
 SELECT * FROM student
 SELECT * FROM program_year 
 SELECT * FROM course
+SELECT * FROM room
 SELECT * FROM program_course WHERE program_year_code = 'COE2';
+SELECT * FROM timetable
+
+SELECT * FROM timetable WHERE event_day = 'Friday' and program_year_code = 'COE2'
