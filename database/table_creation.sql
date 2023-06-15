@@ -27,7 +27,7 @@ CREATE TABLE Program_Year
 CREATE TABLE Course
 (
 	course_code VARCHAR(10) PRIMARY KEY NOT NULL,
-	course_name VARCHAR(20) NOT NULL
+	course_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Program_Course
