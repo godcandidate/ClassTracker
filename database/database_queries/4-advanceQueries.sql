@@ -10,22 +10,29 @@ SELECT * FROM student WHERE student_year=2;
 --All biomedical engineering students in year 3
 	-- get the id for biomedical engineering
 SELECT * FROM programme WHERE programme_name = 'Biomedical Engineering';
+
 	-- then 
 SELECT * FROM student WHERE student_year=3 and programme_id = 'BE';
+
 
 --All courses in year 2
 	-- get the id pattern for year 2
 SELECT * FROM program_year WHERE program_year = 2;
+
 	-- then
 SELECT * FROM program_course WHERE program_year_code LIKE '%2';
+
 
 -- All courses in year 3 for computer engineering
 	-- get id for computer engineering
 SELECT * FROM programme WHERE programme_name = 'Computer Engineering';
+
 	-- get id for computer engineering year 3
 SELECT * FROM program_year WHERE program_year = 3 and programme_id = 'COE';
+
 	--then
 SELECT * FROM program_course WHERE program_year_code = 'COE3';
+
 
 -- Rooms in the Petroleumn Building
 SELECT * FROM room WHERE room_location = 'Petroleum Building';
