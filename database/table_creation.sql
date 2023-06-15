@@ -39,8 +39,7 @@ CREATE TABLE Program_Course
 
 CREATE TABLE Room
 (
-	room_id SERIAL PRIMARY KEY,
-	room_name VARCHAR(30) NOT NULL,
+	room_name VARCHAR(20) PRIMARY KEY NOT NULL,
 	room_location VARCHAR(30) NOT NULL,
 	capacity VARCHAR(20) NOT NULL,
 	description VARCHAR(50) NOT NULL
@@ -50,10 +49,10 @@ CREATE TABLE Timetable
 (
 	event_id SERIAL PRIMARY KEY,
 	program_year_code VARCHAR(12) REFERENCES program_year(program_year_code) ON DELETE CASCADE,
+	event_day VARCHAR(10) NOT NULL,
 	course_code VARCHAR(10) REFERENCES course(course_code) ON DELETE CASCADE,
-	room_id INT REFERENCES room(room_id) ON DELETE CASCADE,
+	room_name VARCHAR(20) REFERENCES room(room_name) ON DELETE CASCADE,
 	start_time TIME NOT NULL,
 	end_time TIME NOT NULL,
-	event_day VARCHAR(15) NOT NULL,
 	status VARCHAR(15) NOT NULL
 );
