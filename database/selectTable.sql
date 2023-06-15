@@ -3,7 +3,5 @@ SELECT * FROM student
 SELECT * FROM program_year 
 SELECT * FROM course
 SELECT * FROM room
-SELECT * FROM program_course WHERE program_year_code = 'COE2';
+SELECT * FROM program_course;
 SELECT * FROM timetable
-
-SELECT * FROM timetable WHERE event_day = 'Friday' and program_year_code = 'COE2'
