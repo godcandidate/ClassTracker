@@ -82,13 +82,3 @@ VALUES ('COE2','Monday','COE252','PB001', TIME '8:00:00', TIME '9:55:00', 'pendi
 		('BE2','Friday','BE251','A110', TIME '1:00:00', TIME '2:55:00', 'pending'),
 		('BE3','Friday','TE262','PB201', TIME '1:00:00', TIME '2:55:00', 'pending'),
 		('COE2','Friday','COE272','PB201', TIME '3:00:00', TIME '4:55:00', 'pending')	
-		
-SELECT * FROM programme
-SELECT * FROM student
-SELECT * FROM program_year 
-SELECT * FROM course
-SELECT * FROM room
-SELECT * FROM program_course WHERE program_year_code = 'COE2';
-SELECT * FROM timetable
-
-SELECT * FROM timetable WHERE event_day = 'Friday' and program_year_code = 'COE2'
